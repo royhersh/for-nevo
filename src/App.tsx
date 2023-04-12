@@ -1,5 +1,9 @@
 import styled from 'styled-components';
+import { BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
 import Login from './components/Login';
+import Test from './components/Test';
 
 const StyledApp = styled.div`
   width: 100vw;
@@ -13,9 +17,14 @@ const StyledApp = styled.div`
 const App = () => {
 
   return (
-    <StyledApp>
-        <Login />
-    </StyledApp>
+    <BrowserRouter>
+      <StyledApp>
+        <Routes>
+          <Route path="/" element={<Login />}/>
+          <Route path="test" element={<Test />} />
+        </Routes>
+      </StyledApp>
+    </BrowserRouter>
   )
 }
 
