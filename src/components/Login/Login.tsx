@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as UserIcon } from './assets/userIcon.svg';
+import { UserIcon } from '@icons';
 import { useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div`
@@ -30,7 +30,7 @@ const Login = () => {
         <Wrapper>
             <Header>שלום נא ליצור משתמש כדי להשתמש באפליקציה</Header>
             <UserIcon style={{width: '220px'}}/>
-            <CreateUserButton onClick={() => navigate('/test')}>צור משתמש</CreateUserButton>
+            <CreateUserButton onClick={() => navigate('/signup')}>צור משתמש</CreateUserButton>
         </Wrapper>
         );
 };
