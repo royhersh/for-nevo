@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Login from './components/Login';
 import Test from './components/Test';
+import Signup from './components/Signup';
 
 const StyledApp = styled.div`
   width: 100vw;
@@ -21,6 +22,7 @@ const App = () => {
       <StyledApp>
         <Routes>
           <Route path="/" element={<Login />}/>
+          <Route path="signup" element={<Signup />} />
           <Route path="test" element={<Test />} />
         </Routes>
       </StyledApp>

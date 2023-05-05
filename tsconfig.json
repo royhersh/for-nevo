@@ -17,8 +17,9 @@
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src"],
+      "@src/*": ["src/*"],
       "@icons": ["src/assets/icons"],
+      "@images": ["src/assets/images"],
     }
   },
   "include": ["src", "custom.d.ts"],
