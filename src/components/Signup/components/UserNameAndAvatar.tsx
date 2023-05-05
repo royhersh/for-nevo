@@ -4,6 +4,7 @@
 import { createRef, useState } from "react";
 import styled from "styled-components";
 import { UserIcon, downloadIcon } from '@icons';
+import { ButtonWriteUserName } from './ButtonWriteUserName'
 
 const UserNameAvatarSection = styled.div`
     padding: 20px;
@@ -31,11 +32,6 @@ const Right = styled.div`
     justify-content: space-between;
 `;
 
-const ButtonWriteUserName = styled.button`
-    background: linear-gradient(270deg, rgb(0, 74, 173) 0%, rgb(203, 108, 230) 100%) ;
-    margin-top: 20px;
-    border-radius: 50px;
-`;
 
 const ImageUploader = styled(({ children, ...rest }: { children:React.ReactNode }) => 
 <div {...rest}>
@@ -74,7 +70,7 @@ export const UserNameAndAvatar = () => {
                     ? <div style={{display:'flex', overflow:'hidden', width:150,height:150,borderRadius:'50%'}}><img src={profileImage} /></div>
                     : <UserIcon height={150} />
                 }
-                <ButtonWriteUserName>לחץ לכתיבה</ButtonWriteUserName>
+                <ButtonWriteUserName />
             </Left>
 
             <Right>
