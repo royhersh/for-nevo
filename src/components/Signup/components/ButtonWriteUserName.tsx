@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
@@ -6,7 +7,34 @@ const StyledButton = styled.button`
     margin-top: 20px;
     border-radius: 50px;
 `;
+const StyledInput = styled.input`
+    background: transparent;
+    border: none;
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-size: 18px;
+`
+
+const placeHolder = 'לחץ לכתיבה';
 
 export const ButtonWriteUserName = () => {
-    return <StyledButton>לחץ לכתיבה</StyledButton>;
+    const [userName, setUserName] = useState(placeHolder);
+
+    const inputProps = {
+        value: userName,
+        onChange: (event: React.ChangeEvent<HTMLInputElement>) => setUserName(event.target.value),
+        onFocus : () => {
+            if (userName === placeHolder) setUserName('');
+        },
+        onBlur: () => {
+            if (userName === '') setUserName(placeHolder);
+        },
+    }
+   
+    return (
+        <StyledButton>
+            <StyledInput {...inputProps} />
+        </StyledButton>
+    );
 }
